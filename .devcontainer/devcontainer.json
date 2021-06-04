@@ -1,0 +1,23 @@
+{
+	"name": "Spring Boot REST API to view Santander's Stock Quotes",
+
+	"dockerComposeFile": [
+		"../docker-compose.yaml",
+		"docker-compose.yaml"
+	],
+
+	"service": "app",
+
+	"workspaceFolder": "/santander_stock_api",
+
+	"settings": {
+		"java.home": "/docker-java-home",
+		"terminal.integrated.defaultProfile": "linux"
+	},
+
+	"extensions": [
+		"vscjava.vscode-java-pack",
+		"redhat.vscode-xml",
+		"gabrielbb.vscode-lombok"
+	]
+}
