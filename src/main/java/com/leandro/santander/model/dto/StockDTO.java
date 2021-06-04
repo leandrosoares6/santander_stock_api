@@ -2,11 +2,31 @@ package com.leandro.santander.model.dto;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class StockDTO {
+
   private String id;
+
+  @NotBlank
   private String name;
-  private Double price;
+
+  @NotNull
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
   private LocalDate date;
+
+  @NotNull
+  @DecimalMin(value = "0.00")
+  @Digits(integer = 6, fraction = 2)
+  private Double price;
+
+  @NotNull
+  @Digits(integer = 3, fraction = 2)
   private Double variation;
 
   public String getId() {
